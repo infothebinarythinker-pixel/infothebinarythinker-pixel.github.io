@@ -516,7 +516,15 @@ text-decoration:none;
 .fade{
 opacity:0;
 transform:translateY(40px);
-transition:1s ease;
+transition:0.6s ease;
+}
+
+@media(max-width:768px){
+.fade{
+opacity:1;
+transform:none;
+transition:none;
+}
 }
 
 .fade.show{
