@@ -9,26 +9,43 @@
 
 <style>
 
-/* ====== GLOBAL ====== */
+/* ================== THEME VARIABLES ================== */
 :root{
+--bg:#f8fafc;
+--card:#ffffff;
+--text:#1e293b;
 --primary:#1e3a8a;
 --accent:#f59e0b;
---dark:#0f172a;
---light:#f8fafc;
---text:#1e293b;
-}
-
-body{
-margin:0;
-font-family:'Poppins',sans-serif;
-background:var(--light);
-color:var(--text);
-transition:0.4s;
 }
 
 body.dark{
-background:var(--dark);
-color:white;
+--bg:#0f172a;
+--card:#1e293b;
+--text:#f1f5f9;
+--primary:#3b82f6;
+--accent:#fbbf24;
+}
+
+body.elegant{
+--bg:#fdf6ec;
+--card:#ffffff;
+--text:#3e2c1c;
+--primary:#7c2d12;
+--accent:#b45309;
+}
+
+/* ================== GLOBAL ================== */
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:var(--bg);
+color:var(--text);
+transition:0.4s;
+scroll-behavior:smooth;
+}
+
+h1,h2{
+font-family:'Playfair Display',serif;
 }
 
 .container{
@@ -37,18 +54,25 @@ margin:auto;
 padding:0 20px;
 }
 
-/* ===== NAV ===== */
+/* ================== SCROLL PROGRESS ================== */
+#progress{
+position:fixed;
+top:0;
+left:0;
+height:4px;
+background:var(--accent);
+width:0%;
+z-index:9999;
+}
+
+/* ================== NAV ================== */
 nav{
 position:fixed;
 width:100%;
 top:0;
-background:white;
+background:var(--card);
 box-shadow:0 4px 15px rgba(0,0,0,0.05);
 z-index:1000;
-}
-
-body.dark nav{
-background:#1e293b;
 }
 
 .nav-inner{
@@ -65,16 +89,16 @@ margin-left:20px;
 font-weight:600;
 }
 
-.toggle{
+.theme-switch{
+padding:6px 12px;
+border-radius:20px;
+border:none;
+cursor:pointer;
 background:var(--primary);
 color:white;
-border:none;
-padding:6px 14px;
-border-radius:20px;
-cursor:pointer;
 }
 
-/* ===== HERO ===== */
+/* ================== HERO ================== */
 .hero{
 padding-top:120px;
 padding-bottom:80px;
@@ -84,29 +108,24 @@ padding-bottom:80px;
 display:grid;
 grid-template-columns:1fr 1fr;
 align-items:center;
-gap:40px;
+gap:60px;
 }
 
 .hero-text h1{
-font-family:'Playfair Display',serif;
-font-size:42px;
+font-size:44px;
 margin-bottom:10px;
 }
 
 .hero-text p{
 font-size:18px;
-line-height:1.6;
-}
-
-.hero-image{
-text-align:center;
+line-height:1.7;
 }
 
 .hero-image img{
 width:260px;
-height:260px;
-border-radius:20px;
+height:320px;
 object-fit:cover;
+border-radius:20px;
 box-shadow:0 15px 40px rgba(0,0,0,0.2);
 border:6px solid var(--accent);
 }
@@ -122,35 +141,30 @@ border-radius:30px;
 font-weight:600;
 }
 
-/* ===== SECTIONS ===== */
+/* ================== SECTIONS ================== */
 section{
-padding:70px 0;
+padding:80px 0;
 }
 
 .section-box{
-background:white;
+background:var(--card);
 padding:50px;
 border-radius:20px;
 box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
-body.dark .section-box{
-background:#1e293b;
-}
-
 .section-title{
-font-family:'Playfair Display',serif;
 color:var(--primary);
 margin-bottom:20px;
 }
 
-/* ===== WRITING SYSTEM ===== */
+/* ================== WRITING ================== */
 .write-box textarea{
 width:100%;
 padding:12px;
-margin-bottom:15px;
 border-radius:8px;
 border:1px solid #ccc;
+margin-bottom:15px;
 }
 
 .write-box button{
@@ -173,7 +187,19 @@ body.dark .post{
 background:#334155;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ================== ANIMATIONS ================== */
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s ease;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* ================== RESPONSIVE ================== */
 @media(max-width:900px){
 .hero-inner{
 grid-template-columns:1fr;
@@ -182,7 +208,7 @@ text-align:center;
 
 .hero-image img{
 width:200px;
-height:200px;
+height:260px;
 }
 
 .hero-text h1{
@@ -203,27 +229,33 @@ margin-top:60px;
 
 <body>
 
+<div id="progress"></div>
+
 <nav>
 <div class="container nav-inner">
 <div><strong>Ovi | Educator</strong></div>
 <div>
 <a href="#about">About</a>
 <a href="#writing">Writings</a>
-<button class="toggle" onclick="toggleMode()">Dark</button>
+<select class="theme-switch" onchange="switchTheme(this.value)">
+<option value="light">Light</option>
+<option value="dark">Dark</option>
+<option value="elegant">Elegant</option>
+</select>
 </div>
 </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero container">
+<section class="hero container fade">
 <div class="hero-inner">
 
 <div class="hero-text">
 <h1>Gazi MD Shahariya Ovi</h1>
 <p>
-Aspiring Teacher dedicated to intellectual growth,
+Aspiring Teacher devoted to intellectual growth,
 critical thinking, and meaningful education.
-Committed to inspiring students through curiosity and empathy.
+Committed to inspiring curiosity in every learner.
 </p>
 <a href="cv.pdf" download class="btn">Download CV</a>
 </div>
@@ -236,25 +268,24 @@ Committed to inspiring students through curiosity and empathy.
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="container">
+<section id="about" class="container fade">
 <div class="section-box">
 <h2 class="section-title">Teaching Philosophy</h2>
 <p>
-Education must develop understanding, not memorization.
+Education should nurture understanding, not memorization.
 My goal is to build classrooms where students feel respected,
-confident, and motivated to explore new ideas.
+motivated, and empowered to explore knowledge independently.
 </p>
 </div>
 </section>
 
 <!-- WRITING SYSTEM -->
-<section id="writing" class="container">
+<section id="writing" class="container fade">
 <div class="section-box">
-
-<h2 class="section-title">Publish My Writings</h2>
+<h2 class="section-title">Publish My Thoughts</h2>
 
 <div class="write-box">
-<textarea id="postContent" rows="4" placeholder="Write your thoughts here..."></textarea>
+<textarea id="postContent" rows="4" placeholder="Write your ideas, reflections, or educational thoughts..."></textarea>
 <button onclick="addPost()">Publish</button>
 </div>
 
@@ -269,12 +300,32 @@ confident, and motivated to explore new ideas.
 
 <script>
 
-/* DARK MODE */
-function toggleMode(){
-document.body.classList.toggle("dark");
+/* ================= THEME SWITCHER ================= */
+function switchTheme(theme){
+document.body.classList.remove("dark","elegant");
+if(theme==="dark") document.body.classList.add("dark");
+if(theme==="elegant") document.body.classList.add("elegant");
 }
 
-/* SIMPLE BLOG SYSTEM */
+/* ================= SCROLL PROGRESS ================= */
+window.onscroll=function(){
+let winScroll=document.documentElement.scrollTop;
+let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+let scrolled=(winScroll/height)*100;
+document.getElementById("progress").style.width=scrolled+"%";
+};
+
+/* ================= FADE ANIMATION ================= */
+const faders=document.querySelectorAll(".fade");
+window.addEventListener("scroll",()=>{
+faders.forEach(el=>{
+if(el.getBoundingClientRect().top<window.innerHeight-100){
+el.classList.add("show");
+}
+});
+});
+
+/* ================= BLOG SYSTEM ================= */
 function addPost(){
 let content=document.getElementById("postContent").value;
 if(content.trim()=="") return;
@@ -290,7 +341,7 @@ function displayPosts(){
 let posts=JSON.parse(localStorage.getItem("posts"))||[];
 let container=document.getElementById("posts");
 container.innerHTML="";
-posts.reverse().forEach(post=>{
+posts.slice().reverse().forEach(post=>{
 let div=document.createElement("div");
 div.className="post";
 div.innerText=post;
