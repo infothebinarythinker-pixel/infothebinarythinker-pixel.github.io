@@ -3,31 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gazi MD Shahariya Ovi | Future Teacher</title>
+<title>Gazi MD Shahariya Ovi | Educator Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 body{
 margin:0;
-font-family:'Segoe UI',sans-serif;
-background:#f4f6fa;
-color:#333;
-transition:0.4s;
+font-family:'Poppins',sans-serif;
+background:#f8fafc;
+color:#1e293b;
 scroll-behavior:smooth;
 }
 
-body.dark{
-background:#0f172a;
-color:white;
-}
-
-#progress{
-position:fixed;
-top:0;
-left:0;
-height:5px;
-background:#1e3c72;
-width:0%;
-z-index:9999;
+h1,h2,h3{
+font-family:'Playfair Display',serif;
 }
 
 nav{
@@ -36,239 +26,226 @@ top:0;
 width:100%;
 display:flex;
 justify-content:space-between;
-padding:15px 40px;
+align-items:center;
+padding:15px 50px;
 background:white;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
 z-index:1000;
-}
-
-body.dark nav{
-background:#1e293b;
 }
 
 nav a{
 margin-left:20px;
 text-decoration:none;
-color:inherit;
-font-weight:500;
-}
-
-.dark-btn{
-background:#1e3c72;
-color:white;
-border:none;
-padding:6px 14px;
-border-radius:20px;
-cursor:pointer;
+color:#1e3a8a;
+font-weight:600;
 }
 
 header{
-padding:140px 20px 80px;
+padding:160px 20px 100px;
 text-align:center;
-background:linear-gradient(135deg,#1e3c72,#2a5298);
+background:linear-gradient(135deg,#0f172a,#1e3a8a);
 color:white;
 }
 
+.profile-wrapper{
+display:flex;
+justify-content:center;
+margin-bottom:30px;
+}
+
 .profile{
-width:170px;
-height:170px;
+width:190px;
+height:190px;
 border-radius:50%;
 object-fit:cover;
-border:6px solid white;
+border:6px solid #f59e0b;
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
 }
 
 .tagline{
-font-size:18px;
+font-size:20px;
+color:#f59e0b;
 margin-top:10px;
 }
 
 .btn{
 display:inline-block;
-margin-top:20px;
-padding:12px 25px;
-background:white;
-color:#1e3c72;
-border-radius:25px;
+margin-top:25px;
+padding:12px 28px;
+background:#f59e0b;
+color:white;
+border-radius:30px;
 text-decoration:none;
-font-weight:bold;
+font-weight:600;
 }
 
 section{
-max-width:900px;
-margin:60px auto;
-padding:40px;
+max-width:950px;
+margin:80px auto;
+padding:50px;
 background:white;
-border-radius:15px;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
+border-radius:20px;
+box-shadow:0 10px 35px rgba(0,0,0,0.06);
 }
 
-body.dark section{
-background:#1e293b;
+section h2{
+color:#1e3a8a;
+margin-bottom:20px;
+border-bottom:3px solid #f59e0b;
+display:inline-block;
+padding-bottom:5px;
 }
 
-.fade{
-opacity:0;
-transform:translateY(40px);
-transition:1s;
+.highlight{
+color:#1e3a8a;
+font-weight:600;
 }
 
-.fade.show{
-opacity:1;
-transform:translateY(0);
+.quote{
+background:#f1f5f9;
+padding:25px;
+border-left:5px solid #f59e0b;
+margin-top:20px;
+font-style:italic;
 }
 
 .counter-box{
 display:flex;
 justify-content:space-around;
+margin-top:30px;
 text-align:center;
 }
 
-.blog-card{
-background:#e2e8f0;
-padding:20px;
-margin:20px 0;
-border-radius:10px;
+.counter{
+font-size:28px;
+color:#1e3a8a;
+font-weight:700;
 }
 
-body.dark .blog-card{
-background:#334155;
+footer{
+text-align:center;
+padding:40px;
+background:#0f172a;
+color:white;
+margin-top:60px;
 }
 </style>
 </head>
 
 <body>
 
-<div id="progress"></div>
-
 <nav>
 <div><strong>Ovi | Educator</strong></div>
 <div>
 <a href="#about">About</a>
+<a href="#philosophy">Philosophy</a>
 <a href="#education">Education</a>
-<a href="#skills">Skills</a>
-<a href="#achievements">Achievements</a>
-<a href="#blog">Blog</a>
-<button class="dark-btn" onclick="toggleDark()">Dark</button>
+<a href="#vision">Vision</a>
 </div>
 </nav>
 
 <header>
+
+<div class="profile-wrapper">
 <img src="profile.jpg" class="profile">
+</div>
+
 <h1>Gazi MD Shahariya Ovi</h1>
-<p class="tagline">Aspiring Teacher | Lifelong Learner | Education Enthusiast</p>
+<p class="tagline">Aspiring Teacher | Lifelong Learner | Academic Visionary</p>
+
+<p style="max-width:700px;margin:20px auto;font-size:18px;">
+Dedicated to inspiring curiosity, critical thinking, and meaningful education.
+Committed to building a future where learning empowers individuals.
+</p>
+
 <a href="cv.pdf" download class="btn">Download CV</a>
+
 </header>
 
-<section id="about" class="fade">
+<section id="about">
 <h2>About Me</h2>
+
 <p>
-I am a thoughtful and curious learner from Chattagram, Bangladesh.
-Currently completing SSC (2026) with GPA 4.25 under Chittagong Board.
-My goal is to become a professional teacher who inspires students and promotes meaningful education.
+I am a motivated and thoughtful student from <span class="highlight">Chattagram, Bangladesh</span>.
+Currently completing SSC (2026) with a GPA of <span class="highlight">4.25</span> under the Chittagong Board.
+My academic journey is driven by curiosity, discipline, and a strong desire to contribute to education.
 </p>
+
+<p style="margin-top:20px;">
+I believe that education is the foundation of societal progress.
+Through patience, empathy, and innovation, I aim to create a classroom
+environment where students feel confident and inspired.
+</p>
+
 </section>
 
-<section id="education" class="fade">
-<h2>Education</h2>
-<p><strong>CMP School and College</strong></p>
-<p>SSC 2026 | GPA: 4.25 | Chittagong Board</p>
-</section>
+<section id="philosophy">
+<h2>Teaching Philosophy</h2>
 
-<section id="skills" class="fade">
-<h2>Skills</h2>
-<ul>
-<li>Computer Application for Smart Office Management (CASOM)</li>
-<li>Microsoft Word</li>
-<li>Communication & Presentation</li>
-<li>Critical Thinking</li>
-<li>Curiosity-Driven Learning</li>
+<p>
+Education is not about memorization — it is about understanding.
+True teaching empowers students to question, explore, and grow.
+</p>
+
+<ul style="margin-top:20px;">
+<li><strong>Curiosity First:</strong> Encourage deep questioning and exploration.</li>
+<li><strong>Respect & Empathy:</strong> Build trust and mutual understanding.</li>
+<li><strong>Modern Integration:</strong> Use technology to enhance learning.</li>
+<li><strong>Student Confidence:</strong> Help students believe in themselves.</li>
 </ul>
+
+<div class="quote">
+"It is best never to seek out death and love, for they will find their way to you on their own."
+</div>
+
 </section>
 
-<section id="achievements" class="fade">
-<h2>Achievements</h2>
+<section id="education">
+<h2>Academic Achievements</h2>
+
 <div class="counter-box">
+
 <div>
-<h3 class="counter" data-target="4.25">0</h3>
+<div class="counter" data-target="4.25">0</div>
 <p>SSC GPA</p>
 </div>
 
 <div>
-<h3 class="counter" data-target="1">0</h3>
-<p>Certification</p>
+<div class="counter" data-target="1">0</div>
+<p>Certification (CASOM)</p>
 </div>
 
 <div>
-<h3 class="counter" data-target="2026">0</h3>
+<div class="counter" data-target="2026">0</div>
 <p>Graduation Year</p>
 </div>
+
 </div>
+
 </section>
 
-<<section id="philosophy" class="fade">
-<h2>Teaching Philosophy & Vision</h2>
+<section id="vision">
+<h2>Future Vision</h2>
 
 <p>
-Education is not simply about memorizing information — it is about understanding,
-critical thinking, and personal growth. As a future teacher, I believe every student
-has unique potential that deserves guidance, patience, and encouragement.
+My long-term goal is to become a respected teacher who shapes young minds,
+encourages independent thinking, and promotes lifelong learning.
 </p>
-
-<p style="margin-top:15px;">
-My teaching philosophy is built on three core principles:
-</p>
-
-<ul style="margin-top:15px;">
-<li><strong>Curiosity First:</strong> Encourage students to ask meaningful questions.</li>
-<li><strong>Respect & Empathy:</strong> Create a safe and supportive classroom environment.</li>
-<li><strong>Modern Learning:</strong> Integrate technology and creativity into education.</li>
-</ul>
 
 <p style="margin-top:20px;">
-My long-term vision is to build a classroom where students feel confident,
-motivated, and inspired to become lifelong learners.
+I envision classrooms where technology, creativity, and academic excellence
+work together to build the leaders of tomorrow.
 </p>
-
-</section>>
-<h2>Educational Thoughts</h2>
-
-<div class="blog-card">
-<h3>Why Curiosity Matters</h3>
-<p>True education begins when students ask questions. Curiosity builds deeper understanding.</p>
-</div>
-
-<div class="blog-card">
-<h3>Technology in Education</h3>
-<p>Modern teaching integrates technology to improve access and engagement.</p>
-</div>
 
 </section>
 
-<footer style="text-align:center;padding:40px;background:#1e3c72;color:white;">
-© 2026 Gazi MD Shahariya Ovi | Future Teacher
+<footer>
+© 2026 Gazi MD Shahariya Ovi  
+<br>
+Future Educator | Dedicated to Knowledge & Growth
 </footer>
 
 <script>
-function toggleDark(){
-document.body.classList.toggle("dark");
-}
-
-window.onscroll=function(){
-let winScroll=document.documentElement.scrollTop;
-let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-let scrolled=(winScroll/height)*100;
-document.getElementById("progress").style.width=scrolled+"%";
-};
-
-const faders=document.querySelectorAll(".fade");
-window.addEventListener("scroll",()=>{
-faders.forEach(el=>{
-if(el.getBoundingClientRect().top<window.innerHeight-100){
-el.classList.add("show");
-}
-});
-});
-
 const counters=document.querySelectorAll('.counter');
 counters.forEach(counter=>{
 counter.innerText='0';
