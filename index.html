@@ -1,651 +1,240 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gazi MD Shahariya Ovi | Educator Portfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gazi MD Shahariya Ovi | Educator Portfolio</title>
+<meta name="description" content="Gazi MD Shahariya Ovi — Future Teacher from Chattagram, Bangladesh. SSC 2026 (GPA 4.25), CASOM (BCC).">
+<meta name="theme-color" content="#1e3a8a">
 
-  <meta name="description" content="Portfolio of Gazi MD Shahariya Ovi — Future Teacher from Chattagram, Bangladesh. SSC 2026 (GPA 4.25), CASOM (BCC).">
-  <meta name="keywords" content="Gazi MD Shahariya Ovi, teacher, educator, SSC 2026, Chittagong, CASOM, BCC, portfolio">
-  <meta name="author" content="Gazi MD Shahariya Ovi">
-  <meta name="theme-color" content="#1e3a8a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap"></noscript>
 
-  <!-- Faster font loading (non-blocking) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    rel="preload"
-    as="style"
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
-    onload="this.onload=null;this.rel='stylesheet'"
-  >
-  <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  </noscript>
-
-  <style>
-    /* ===== Theme variables ===== */
-    :root{
-      --bg:#f8fafc;
-      --card:#ffffff;
-      --text:#0f172a;
-      --muted:#475569;
-      --primary:#1e3a8a;
-      --accent:#f59e0b;
-      --border:rgba(2,6,23,.10);
-      --shadow:0 10px 25px rgba(2,6,23,.07); /* lighter shadow for speed */
-    }
-    body.dark{
-      --bg:#0b1220;
-      --card:#0f1b2f;
-      --text:#f1f5f9;
-      --muted:#a8b3c7;
-      --primary:#60a5fa;
-      --accent:#fbbf24;
-      --border:rgba(148,163,184,.15);
-      --shadow:0 10px 25px rgba(0,0,0,.25);
-    }
-    body.elegant{
-      --bg:#fdf6ec;
-      --card:#fffbf4;
-      --text:#3e2c1c;
-      --muted:#6b4a2b;
-      --primary:#7c2d12;
-      --accent:#b45309;
-      --border:rgba(124,45,18,.15);
-      --shadow:0 10px 25px rgba(124,45,18,.10);
-    }
-
-    /* ===== Base ===== */
-    *{ box-sizing:border-box; }
-    html,body{ margin:0; padding:0; }
-    body{
-      font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      transition:background .25s ease, color .25s ease;
-      scroll-behavior:smooth;
-    }
-    h1,h2{ font-family:"Playfair Display", serif; margin:0 0 10px; }
-    a{ color:inherit; }
-    .container{ max-width:1100px; margin:0 auto; padding:0 18px; }
-
-    /* ===== Progress ===== */
-    #progress{
-      position:fixed; top:0; left:0; height:3px; width:0%;
-      background:var(--accent); z-index:9999;
-    }
-
-    /* ===== Nav ===== */
-    nav{
-      position:fixed; top:3px; left:0; right:0;
-      background:var(--card);
-      border-bottom:1px solid var(--border);
-      z-index:1000;
-    }
-    .nav-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      gap:10px;
-    }
-    .brand{
-      font-weight:800;
-      color:var(--primary);
-      letter-spacing:.2px;
-      white-space:nowrap;
-    }
-    .nav-links{
-      display:flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:flex-end;
-    }
-    .nav-links a{
-      text-decoration:none;
-      font-weight:600;
-      font-size:13px;
-      color:var(--muted);
-      padding:6px 8px;
-      border-radius:10px;
-    }
-    .nav-links a:hover{ color:var(--text); background:rgba(148,163,184,.12); }
-
-    select.theme{
-      border:1px solid var(--border);
-      background:var(--card);
-      color:var(--text);
-      padding:7px 10px;
-      border-radius:999px;
-      font-weight:600;
-      font-size:13px;
-      cursor:pointer;
-    }
-
-    /* ===== Hero ===== */
-    .hero{
-      padding:110px 0 64px;
-      min-height:calc(100vh - 40px);
-      display:flex;
-      align-items:center;
-    }
-    .hero-inner{
-      display:grid;
-      grid-template-columns:1.25fr .75fr;
-      gap:44px;
-      align-items:center;
-    }
-    .hero h1{
-      font-size:44px;
-      line-height:1.12;
-      color:var(--primary);
-    }
-    .tagline{
-      color:var(--accent);
-      font-weight:700;
-      margin:10px 0 14px;
-      font-size:16px;
-    }
-    .lead{
-      color:var(--muted);
-      line-height:1.75;
-      font-size:15.5px;
-      margin:0 0 18px;
-      max-width:62ch;
-    }
-    .actions{ display:flex; gap:10px; flex-wrap:wrap; }
-
-    .btn{
-      display:inline-block;
-      padding:12px 18px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:700;
-      font-size:14px;
-      border:1px solid transparent;
-      transition:transform .15s ease, opacity .15s ease;
-    }
-    .btn:active{ transform:scale(.98); }
-    .btn-primary{ background:var(--primary); color:white; }
-    .btn-outline{ background:transparent; border-color:var(--primary); color:var(--primary); }
-
-    .photo-frame{
-      width:280px;
-      max-width:100%;
-      margin-left:auto;
-      border-radius:18px;
-      padding:10px;
-      border:2px solid var(--border);
-      box-shadow:var(--shadow);
-      background:linear-gradient(180deg, rgba(245,158,11,.12), transparent);
-    }
-    .photo-frame img{
-      display:block;
-      width:100%;
-      height:auto;
-      border-radius:14px;
-      border:4px solid var(--accent);
-    }
-
-    /* ===== Sections ===== */
-    section{ padding:58px 0; }
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:18px;
-      box-shadow:var(--shadow);
-      padding:28px;
-    }
-    .title{
-      font-size:26px;
-      color:var(--primary);
-      margin-bottom:10px;
-    }
-    .line{
-      width:64px; height:4px; border-radius:999px;
-      background:var(--accent);
-      margin:0 0 18px;
-    }
-    .grid-2{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px 18px;
-    }
-    .item small{
-      display:block;
-      color:var(--muted);
-      text-transform:uppercase;
-      letter-spacing:.08em;
-      font-size:11px;
-      margin-bottom:4px;
-    }
-    .item div{ font-weight:700; }
-
-    .tags{ display:flex; flex-wrap:wrap; gap:10px; }
-    .tag{
-      padding:8px 12px;
-      border-radius:999px;
-      background:rgba(30,58,138,.12);
-      border:1px solid var(--border);
-      color:var(--text);
-      font-weight:700;
-      font-size:13px;
-    }
-    body.dark .tag{ background:rgba(96,165,250,.12); }
-
-    .quote{
-      margin-top:16px;
-      padding:16px 16px 16px 14px;
-      border-left:4px solid var(--accent);
-      background:rgba(148,163,184,.12);
-      border-radius:10px;
-      font-style:italic;
-      color:var(--text);
-    }
-
-    /* Timeline */
-    .timeline{
-      border-left:3px solid var(--primary);
-      padding-left:16px;
-      display:grid;
-      gap:14px;
-    }
-    .t{
-      position:relative;
-      padding-left:6px;
-    }
-    .t::before{
-      content:"";
-      position:absolute;
-      left:-26px; top:4px;
-      width:12px; height:12px;
-      border-radius:50%;
-      background:var(--accent);
-      border:3px solid var(--primary);
-    }
-    .t .y{ color:var(--accent); font-weight:800; font-size:12px; }
-    .t .h{ font-weight:800; color:var(--primary); margin-top:3px; }
-    .t .s{ color:var(--muted); font-size:13.5px; margin-top:2px; line-height:1.5; }
-
-    /* Counters */
-    .cgrid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
-      text-align:center;
-    }
-    .cbox{
-      background:rgba(148,163,184,.12);
-      border:1px solid var(--border);
-      border-radius:14px;
-      padding:14px;
-    }
-    .counter{
-      font-family:"Playfair Display", serif;
-      font-size:34px;
-      color:var(--primary);
-      font-weight:800;
-      line-height:1.1;
-    }
-    .cbox p{ margin:6px 0 0; color:var(--muted); font-weight:700; }
-
-    /* Writing system */
-    .input, .textarea{
-      width:100%;
-      border-radius:14px;
-      border:1px solid var(--border);
-      padding:12px 12px;
-      background:var(--bg);
-      color:var(--text);
-      font:inherit;
-      outline:none;
-    }
-    .textarea{ min-height:140px; resize:vertical; }
-    .publish{
-      margin-top:12px;
-      border:none;
-      border-radius:999px;
-      padding:12px 16px;
-      background:var(--accent);
-      color:white;
-      font-weight:800;
-      cursor:pointer;
-    }
-    .post{
-      margin-top:14px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background:rgba(148,163,184,.12);
-      padding:14px;
-    }
-    .post h3{ margin:0 0 6px; font-size:16px; color:var(--primary); font-family:Poppins, sans-serif; }
-    .post .meta{ font-size:12px; color:var(--muted); margin-top:8px; font-weight:700; }
-    .post button{
-      margin-top:8px;
-      border:none;
-      background:transparent;
-      color:#ef4444;
-      cursor:pointer;
-      font-weight:800;
-      font-size:12px;
-      padding:0;
-    }
-
-    /* Footer */
-    footer{
-      margin-top:40px;
-      background:var(--card);
-      border-top:1px solid var(--border);
-      padding:26px 0;
-      color:var(--muted);
-      text-align:center;
-    }
-
-    /* Animations (optimized) */
-    .reveal{ opacity:0; transform:translateY(18px); transition:.6s ease; }
-    .reveal.show{ opacity:1; transform:none; }
-
-    @media (prefers-reduced-motion: reduce){
-      *{ transition:none !important; animation:none !important; scroll-behavior:auto !important; }
-      .reveal{ opacity:1; transform:none; }
-    }
-
-    /* Responsive */
-    @media (max-width:900px){
-      .hero-inner{ grid-template-columns:1fr; text-align:center; }
-      .photo-frame{ margin:0 auto; }
-      .hero h1{ font-size:32px; }
-      .lead{ margin-left:auto; margin-right:auto; }
-      .actions{ justify-content:center; }
-      .grid-2{ grid-template-columns:1fr; }
-      .cgrid{ grid-template-columns:1fr; }
-      .nav-links{ justify-content:center; }
-    }
-  </style>
+<style>
+:root{--bg:#f8fafc;--card:#fff;--tx:#0f172a;--mut:#475569;--pri:#1e3a8a;--acc:#f59e0b;--bd:rgba(2,6,23,.1);--sh:0 10px 25px rgba(2,6,23,.07)}
+body.dark{--bg:#0b1220;--card:#0f1b2f;--tx:#f1f5f9;--mut:#a8b3c7;--pri:#60a5fa;--acc:#fbbf24;--bd:rgba(148,163,184,.15);--sh:0 10px 25px rgba(0,0,0,.25)}
+body.elegant{--bg:#fdf6ec;--card:#fffbf4;--tx:#3e2c1c;--mut:#6b4a2b;--pri:#7c2d12;--acc:#b45309;--bd:rgba(124,45,18,.15);--sh:0 10px 25px rgba(124,45,18,.10)}
+*{box-sizing:border-box} html,body{margin:0} body{font-family:Poppins,system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--tx);transition:.25s;scroll-behavior:smooth}
+h1,h2{font-family:"Playfair Display",serif;margin:.2em 0} a{color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 18px}
+#p{position:fixed;top:0;left:0;height:3px;width:0;background:var(--acc);z-index:9}
+nav{position:fixed;top:3px;left:0;right:0;background:var(--card);border-bottom:1px solid var(--bd);z-index:8}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 0}
+.brand{font-weight:800;color:var(--pri);white-space:nowrap}
+.links{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end;align-items:center}
+.links a{font-size:13px;font-weight:700;text-decoration:none;color:var(--mut);padding:6px 8px;border-radius:10px}
+.links a:hover{color:var(--tx);background:rgba(148,163,184,.12)}
+select{border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:7px 10px;border-radius:999px;font-weight:700;font-size:13px}
+.hero{padding:110px 0 64px;min-height:calc(100vh - 40px);display:flex;align-items:center}
+.heroIn{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+h1{font-size:44px;line-height:1.1;color:var(--pri)}
+.tag{color:var(--acc);font-weight:800}
+.lead{color:var(--mut);line-height:1.75;margin:14px 0 18px;max-width:62ch}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:800;font-size:14px;border:1px solid transparent}
+.primary{background:var(--pri);color:#fff}
+.out{background:transparent;border-color:var(--pri);color:var(--pri)}
+.frame{width:280px;max-width:100%;margin-left:auto;border-radius:18px;padding:10px;border:1px solid var(--bd);box-shadow:var(--sh);background:linear-gradient(180deg,rgba(245,158,11,.12),transparent)}
+.frame img{display:block;width:100%;height:auto;border-radius:14px;border:4px solid var(--acc)}
+section{padding:54px 0}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;box-shadow:var(--sh);padding:26px}
+.title{font-size:26px;color:var(--pri)}
+.line{width:64px;height:4px;border-radius:999px;background:var(--acc);margin:10px 0 18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px}
+.item small{display:block;color:var(--mut);text-transform:uppercase;letter-spacing:.08em;font-size:11px;margin-bottom:4px}
+.item div{font-weight:800}
+.quote{margin-top:16px;padding:14px;border-left:4px solid var(--acc);background:rgba(148,163,184,.12);border-radius:10px;font-style:italic}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tagChip{padding:8px 12px;border-radius:999px;background:rgba(30,58,138,.12);border:1px solid var(--bd);font-weight:800;font-size:13px}
+body.dark .tagChip{background:rgba(96,165,250,.12)}
+.time{border-left:3px solid var(--pri);padding-left:16px;display:grid;gap:14px}
+.t{position:relative}
+.t:before{content:"";position:absolute;left:-26px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--acc);border:3px solid var(--pri)}
+.y{color:var(--acc);font-weight:900;font-size:12px}
+.hh{font-weight:900;color:var(--pri);margin-top:3px}
+.ss{color:var(--mut);font-size:13.5px;margin-top:2px;line-height:1.5}
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center;margin-top:14px}
+.cbox{background:rgba(148,163,184,.12);border:1px solid var(--bd);border-radius:14px;padding:14px}
+.num{font-family:"Playfair Display",serif;font-size:34px;color:var(--pri);font-weight:900;line-height:1.1}
+.cbox p{margin:6px 0 0;color:var(--mut);font-weight:800}
+.input,.ta{width:100%;border-radius:14px;border:1px solid var(--bd);padding:12px;background:var(--bg);color:var(--tx);font:inherit;outline:none}
+.ta{min-height:140px;resize:vertical}
+.pub{margin-top:12px;border:none;border-radius:999px;padding:12px 16px;background:var(--acc);color:#fff;font-weight:900;cursor:pointer}
+.post{margin-top:14px;border-radius:14px;border:1px solid var(--bd);background:rgba(148,163,184,.12);padding:14px}
+.post h3{margin:0 0 6px;font-size:16px;color:var(--pri);font-family:Poppins,sans-serif}
+.meta{font-size:12px;color:var(--mut);margin-top:8px;font-weight:800}
+.del{margin-top:8px;border:none;background:transparent;color:#ef4444;cursor:pointer;font-weight:900;font-size:12px;padding:0}
+.reveal{opacity:0;transform:translateY(14px);transition:.55s ease}
+.reveal.show{opacity:1;transform:none}
+footer{margin-top:40px;background:var(--card);border-top:1px solid var(--bd);padding:24px 0;color:var(--mut);text-align:center}
+@media(max-width:900px){.heroIn{grid-template-columns:1fr;text-align:center}.frame{margin:0 auto}.btns{justify-content:center}h1{font-size:32px}.lead{margin-left:auto;margin-right:auto}.grid{grid-template-columns:1fr}.cgrid{grid-template-columns:1fr}}
+</style>
 </head>
 
 <body>
-  <div id="progress"></div>
+<div id="p"></div>
 
-  <nav>
-    <div class="container nav-inner">
-      <div class="brand">Ovi | Educator</div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#writings">Writings</a>
-        <a href="#contact">Contact</a>
-        <select class="theme" id="themeSelect" aria-label="Theme" onchange="switchTheme(this.value)">
-          <option value="light">Light</option>
-          <option value="dark">Dark</option>
-          <option value="elegant">Elegant</option>
-        </select>
+<nav><div class="container nav">
+  <div class="brand">Ovi | Educator</div>
+  <div class="links">
+    <a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a>
+    <a href="#writings">Writings</a><a href="#contact">Contact</a>
+    <select id="theme" onchange="setTheme(this.value)">
+      <option value="light">Light</option><option value="dark">Dark</option><option value="elegant">Elegant</option>
+    </select>
+  </div>
+</div></nav>
+
+<main class="container">
+  <section class="hero reveal">
+    <div class="heroIn">
+      <div>
+        <h1>Gazi MD Shahariya Ovi</h1>
+        <div class="tag">Aspiring Teacher | Lifelong Learner | Academic Visionary</div>
+        <p class="lead">I am a thoughtful and curious individual from Chattagram, Bangladesh, who appreciates learning and exploring new ideas. My goal is to become a professional Teacher and inspire students through knowledge, empathy, and innovation.</p>
+        <div class="btns">
+          <a class="btn primary" href="cv.pdf" download>Download CV</a>
+          <a class="btn out" href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="frame">
+        <img src="profile.jpg" alt="Gazi MD Shahariya Ovi" width="560" height="700" decoding="async" fetchpriority="high">
       </div>
     </div>
-  </nav>
+  </section>
 
-  <main class="container">
-    <section class="hero reveal">
-      <div class="hero-inner">
-        <div>
-          <h1>Gazi MD Shahariya Ovi</h1>
-          <div class="tagline">Aspiring Teacher | Lifelong Learner | Academic Visionary</div>
-          <p class="lead">
-            I am a thoughtful and curious individual from Chattagram, Bangladesh, who appreciates learning and exploring new ideas.
-            My goal is to become a professional Teacher and inspire students through knowledge, empathy, and innovation.
-          </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="cv.pdf" download>Download CV</a>
-            <a class="btn btn-outline" href="#contact">Contact</a>
-          </div>
-        </div>
-
-        <div class="photo-frame" aria-label="Profile photo frame">
-          <img
-            src="profile.jpg"
-            alt="Gazi MD Shahariya Ovi"
-            width="560"
-            height="700"
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-          >
-        </div>
+  <section id="about" class="reveal">
+    <div class="card">
+      <div class="title">Personal Information</div><div class="line"></div>
+      <div class="grid">
+        <div class="item"><small>Full Name</small><div>Gazi MD Shahariya Ovi</div></div>
+        <div class="item"><small>Date of Birth</small><div>5 June 2009</div></div>
+        <div class="item"><small>Gender</small><div>Male</div></div>
+        <div class="item"><small>Nationality</small><div>Bangladeshi</div></div>
+        <div class="item"><small>Blood Group</small><div>AB+</div></div>
+        <div class="item"><small>Location</small><div>Chattagram, Lal Khan Bazar</div></div>
+        <div class="item"><small>Father</small><div>Gazi Mohammad Shokut Akbar</div></div>
+        <div class="item"><small>Mother</small><div>Sarmin Sultana</div></div>
+        <div class="item"><small>Phone</small><div>+8801892325263</div></div>
+        <div class="item"><small>Email</small><div>ovimd1986@gmail.com</div></div>
+        <div class="item"><small>Languages</small><div>Bengali, Hindi</div></div>
+        <div class="item"><small>Threads</small><div><a target="_blank" rel="noopener" href="https://www.threads.net/@g_m_ovi_10">@g_m_ovi_10</a></div></div>
       </div>
-    </section>
+      <div class="quote">“It is best never to seek out death and love, for they will find their way to you on their own.”</div>
+    </div>
+  </section>
 
-    <section id="about" class="reveal">
-      <div class="card">
-        <div class="title">Personal Information</div>
-        <div class="line"></div>
-
-        <div class="grid-2">
-          <div class="item"><small>Full Name</small><div>Gazi MD Shahariya Ovi</div></div>
-          <div class="item"><small>Date of Birth</small><div>5 June 2009</div></div>
-          <div class="item"><small>Gender</small><div>Male</div></div>
-          <div class="item"><small>Nationality</small><div>Bangladeshi</div></div>
-          <div class="item"><small>Blood Group</small><div>AB+</div></div>
-          <div class="item"><small>Location</small><div>Chattagram, Lal Khan Bazar</div></div>
-          <div class="item"><small>Father</small><div>Gazi Mohammad Shokut Akbar</div></div>
-          <div class="item"><small>Mother</small><div>Sarmin Sultana</div></div>
-          <div class="item"><small>Phone</small><div>+8801892325263</div></div>
-          <div class="item"><small>Email</small><div>ovimd1986@gmail.com</div></div>
-          <div class="item"><small>Languages</small><div>Bengali, Hindi</div></div>
-          <div class="item"><small>Threads</small><div><a href="https://www.threads.net/@g_m_ovi_10" target="_blank" rel="noopener"> @g_m_ovi_10</a></div></div>
-        </div>
-
-        <div class="quote">
-          “It is best never to seek out death and love, for they will find their way to you on their own.”
-        </div>
+  <section id="education" class="reveal">
+    <div class="card">
+      <div class="title">Academic Journey</div><div class="line"></div>
+      <div class="time">
+        <div class="t"><div class="y">2026</div><div class="hh">SSC Examination</div><div class="ss">CMP School and College • Chittagong Board • GPA: 4.25</div></div>
+        <div class="t"><div class="y">Completed</div><div class="hh">CASOM Certification</div><div class="ss">Computer Application for Smart Office Management • Bangladesh Computer Council (BCC)</div></div>
       </div>
-    </section>
 
-    <section id="education" class="reveal">
-      <div class="card">
-        <div class="title">Academic Journey</div>
-        <div class="line"></div>
-
-        <div class="timeline">
-          <div class="t">
-            <div class="y">2026</div>
-            <div class="h">SSC Examination</div>
-            <div class="s">CMP School and College • Chittagong Board • GPA: 4.25</div>
-          </div>
-          <div class="t">
-            <div class="y">Completed</div>
-            <div class="h">CASOM Certification</div>
-            <div class="s">Computer Application for Smart Office Management • Bangladesh Computer Council (BCC)</div>
-          </div>
-        </div>
-
-        <div style="height:16px"></div>
-
-        <div class="cgrid" id="counters">
-          <div class="cbox">
-            <div class="counter" data-target="4">0</div>
-            <p>.25 GPA</p>
-          </div>
-          <div class="cbox">
-            <div class="counter" data-target="1">0</div>
-            <p>Certification</p>
-          </div>
-          <div class="cbox">
-            <div class="counter" data-target="2026">0</div>
-            <p>SSC Year</p>
-          </div>
-        </div>
+      <div class="cgrid" id="cWrap">
+        <div class="cbox"><div class="num" data-target="4">0</div><p>.25 GPA</p></div>
+        <div class="cbox"><div class="num" data-target="1">0</div><p>Certification</p></div>
+        <div class="cbox"><div class="num" data-target="2026">0</div><p>SSC Year</p></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="skills" class="reveal">
-      <div class="card">
-        <div class="title">Skills & Strengths</div>
-        <div class="line"></div>
-        <div class="tags">
-          <span class="tag">CASOM</span>
-          <span class="tag">MS Word</span>
-          <span class="tag">Communication</span>
-          <span class="tag">Critical Thinking</span>
-          <span class="tag">Curiosity</span>
-          <span class="tag">Carrom</span>
-          <span class="tag">Mobile Games</span>
-          <span class="tag">Continuous Learning</span>
-        </div>
+  <section id="skills" class="reveal">
+    <div class="card">
+      <div class="title">Skills & Strengths</div><div class="line"></div>
+      <div class="tags">
+        <span class="tagChip">CASOM</span><span class="tagChip">MS Word</span><span class="tagChip">Communication</span>
+        <span class="tagChip">Critical Thinking</span><span class="tagChip">Curiosity</span>
+        <span class="tagChip">Carrom</span><span class="tagChip">Mobile Games</span>
       </div>
-    </section>
-
-    <section id="writings" class="reveal">
-      <div class="card">
-        <div class="title">My Writings</div>
-        <div class="line"></div>
-
-        <p style="margin:0 0 14px; color:var(--muted); line-height:1.7;">
-          Publish your own thoughts, reflections, or educational ideas. (Saved on this device/browser.)
-        </p>
-
-        <input class="input" id="postTitle" placeholder="Title..." />
-        <div style="height:10px"></div>
-        <textarea class="textarea" id="postContent" placeholder="Write here..."></textarea>
-        <button class="publish" onclick="addPost()">Publish</button>
-
-        <div id="posts"></div>
+      <div class="quote" style="margin-top:16px;font-style:normal">
+        <strong>Career Goal:</strong> Teacher — I have a strong desire to explore new topics, ask thoughtful questions, and continuously expand my knowledge.
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact" class="reveal">
-      <div class="card">
-        <div class="title">Contact</div>
-        <div class="line"></div>
-        <p style="margin:0; color:var(--muted); line-height:1.8;">
-          Phone: <strong>+8801892325263</strong><br>
-          Email: <strong>ovimd1986@gmail.com</strong><br>
-          Location: <strong>Chattagram, Lal Khan Bazar</strong>
-        </p>
-      </div>
-    </section>
-  </main>
+  <section id="writings" class="reveal">
+    <div class="card">
+      <div class="title">My Writings</div><div class="line"></div>
+      <p style="margin:0 0 14px;color:var(--mut);line-height:1.7">Publish thoughts and reflections here (saved on this device/browser).</p>
+      <input class="input" id="t" placeholder="Title...">
+      <div style="height:10px"></div>
+      <textarea class="ta" id="c" placeholder="Write here..."></textarea>
+      <button class="pub" onclick="add()">Publish</button>
+      <div id="list"></div>
+    </div>
+  </section>
 
-  <footer>
-    © 2026 Gazi MD Shahariya Ovi • <a href="https://www.threads.net/@g_m_ovi_10" target="_blank" rel="noopener">Threads</a>
-  </footer>
+  <section id="contact" class="reveal">
+    <div class="card">
+      <div class="title">Contact</div><div class="line"></div>
+      <p style="margin:0;color:var(--mut);line-height:1.8">
+        Phone: <b>+8801892325263</b><br>
+        Email: <b>ovimd1986@gmail.com</b><br>
+        Location: <b>Chattagram, Lal Khan Bazar</b>
+      </p>
+    </div>
+  </section>
+</main>
 
-  <script>
-    /* ===== Persist theme (fast) ===== */
-    const savedTheme = localStorage.getItem("theme") || "light";
-    if(savedTheme !== "light") document.body.classList.add(savedTheme);
-    const sel = document.getElementById("themeSelect");
-    if(sel) sel.value = savedTheme;
+<footer>© 2026 Gazi MD Shahariya Ovi • <a href="https://www.threads.net/@g_m_ovi_10" target="_blank" rel="noopener">Threads</a></footer>
 
-    function switchTheme(theme){
-      document.body.classList.remove("dark","elegant");
-      if(theme !== "light") document.body.classList.add(theme);
-      localStorage.setItem("theme", theme);
-    }
+<script>
+/* theme */
+const sel=document.getElementById("theme"), saved=localStorage.getItem("theme")||"light";
+if(saved!=="light")document.body.classList.add(saved); sel.value=saved;
+function setTheme(v){document.body.classList.remove("dark","elegant"); if(v!=="light")document.body.classList.add(v); localStorage.setItem("theme",v);}
 
-    /* ===== Progress bar (lightweight) ===== */
-    function updateProgress(){
-      const doc = document.documentElement;
-      const total = doc.scrollHeight - doc.clientHeight;
-      const scrolled = total > 0 ? (doc.scrollTop / total) * 100 : 0;
-      document.getElementById("progress").style.width = scrolled + "%";
-    }
-    document.addEventListener("scroll", updateProgress, {passive:true});
-    updateProgress();
+/* progress */
+const bar=document.getElementById("p");
+addEventListener("scroll",()=>{const d=document.documentElement,t=d.scrollHeight-d.clientHeight;bar.style.width=(t?d.scrollTop/t*100:0)+"%";},{passive:true});
 
-    /* ===== Reveal animations (IntersectionObserver) ===== */
-    const reveals = document.querySelectorAll(".reveal");
-    const revealObs = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting) e.target.classList.add("show");
-      });
-    }, {threshold:0.12});
-    reveals.forEach(el=>revealObs.observe(el));
+/* reveal */
+const obs=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add("show")),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
 
-    /* ===== Counters start only when visible ===== */
-    function runCounters(){
-      document.querySelectorAll(".counter").forEach(counter=>{
-        if(counter.dataset.done) return;
-        counter.dataset.done = "1";
+/* counters (start when visible) */
+const cObs=new IntersectionObserver(es=>{
+  if(!es.some(e=>e.isIntersecting))return;
+  document.querySelectorAll(".num").forEach(n=>{
+    if(n.dataset.done)return; n.dataset.done=1;
+    const target=+n.dataset.target; let cur=0,steps=60,inc=target/steps;
+    (function tick(){cur+=inc; n.textContent=(cur<target?Math.ceil(cur):target); if(cur<target)requestAnimationFrame(tick)})();
+  });
+  cObs.disconnect();
+},{threshold:.25});
+cObs.observe(document.getElementById("cWrap"));
 
-        const target = Number(counter.getAttribute("data-target") || "0");
-        let cur = 0;
-        const steps = 60;
-        const inc = target / steps;
-
-        const tick = () => {
-          cur += inc;
-          if(cur < target){
-            counter.textContent = String(Math.ceil(cur));
-            requestAnimationFrame(tick);
-          }else{
-            counter.textContent = String(target);
-          }
-        };
-        requestAnimationFrame(tick);
-      });
-    }
-
-    const counterWrap = document.getElementById("counters");
-    if(counterWrap){
-      const counterObs = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-          if(e.isIntersecting) runCounters();
-        });
-      }, {threshold:0.25});
-      counterObs.observe(counterWrap);
-    }
-
-    /* ===== Writing system ===== */
-    function escapeHtml(str){
-      return str.replace(/[&<>"']/g, m => ({
-        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
-      }[m]));
-    }
-
-    function addPost(){
-      const title = document.getElementById("postTitle").value.trim();
-      const content = document.getElementById("postContent").value.trim();
-      if(!title || !content) return alert("Please add title and content.");
-
-      const posts = JSON.parse(localStorage.getItem("oviPosts") || "[]");
-      posts.push({ title, content, date: new Date().toLocaleDateString() });
-      localStorage.setItem("oviPosts", JSON.stringify(posts));
-
-      document.getElementById("postTitle").value = "";
-      document.getElementById("postContent").value = "";
-      renderPosts();
-    }
-
-    function deletePost(index){
-      const posts = JSON.parse(localStorage.getItem("oviPosts") || "[]");
-      posts.splice(index, 1);
-      localStorage.setItem("oviPosts", JSON.stringify(posts));
-      renderPosts();
-    }
-
-    function renderPosts(){
-      const posts = JSON.parse(localStorage.getItem("oviPosts") || "[]");
-      const wrap = document.getElementById("posts");
-      wrap.innerHTML = "";
-
-      if(posts.length === 0){
-        wrap.innerHTML = `<p style="color:var(--muted); margin:14px 0 0;">No writings published yet.</p>`;
-        return;
-      }
-
-      posts.slice().reverse().forEach((p, iRev)=>{
-        const realIndex = posts.length - 1 - iRev;
-        const div = document.createElement("div");
-        div.className = "post";
-        div.innerHTML = `
-          <h3>${escapeHtml(p.title)}</h3>
-          <div style="color:var(--muted); line-height:1.7; font-size:14px;">${escapeHtml(p.content)}</div>
-          <div class="meta">${escapeHtml(p.date)}</div>
-          <button onclick="deletePost(${realIndex})">Delete</button>
-        `;
-        wrap.appendChild(div);
-      });
-    }
-
-    renderPosts();
-  </script>
+/* writings */
+const KEY="oviPosts";
+const esc=s=>s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+function add(){
+  const title=t.value.trim(), content=c.value.trim();
+  if(!title||!content) return alert("Add title and content.");
+  const posts=JSON.parse(localStorage.getItem(KEY)||"[]");
+  posts.push({title,content,date:new Date().toLocaleDateString()});
+  localStorage.setItem(KEY,JSON.stringify(posts)); t.value=""; c.value=""; render();
+}
+function del(i){
+  const posts=JSON.parse(localStorage.getItem(KEY)||"[]");
+  posts.splice(i,1); localStorage.setItem(KEY,JSON.stringify(posts)); render();
+}
+function render(){
+  const posts=JSON.parse(localStorage.getItem(KEY)||"[]"), w=document.getElementById("list");
+  w.innerHTML=posts.length?"":"<p style='color:var(--mut);margin:14px 0 0'>No writings yet.</p>";
+  posts.slice().reverse().forEach((p,rev)=>{
+    const i=posts.length-1-rev;
+    const d=document.createElement("div");
+    d.className="post";
+    d.innerHTML=`<h3>${esc(p.title)}</h3><div style="color:var(--mut);line-height:1.7;font-size:14px">${esc(p.content)}</div>
+                 <div class="meta">${esc(p.date)}</div><button class="del" onclick="del(${i})">Delete</button>`;
+    w.appendChild(d);
+  });
+}
+render();
+</script>
 </body>
 </html>
