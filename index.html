@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gazi MD Shahariya Ovi | Future Teacher</title>
+
+<style>
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:#f4f6fa;
+color:#333;
+transition:0.4s;
+scroll-behavior:smooth;
+}
+
+body.dark{
+background:#0f172a;
+color:white;
+}
+
+#progress{
+position:fixed;
+top:0;
+left:0;
+height:5px;
+background:#1e3c72;
+width:0%;
+z-index:9999;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:15px 40px;
+background:white;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+z-index:1000;
+}
+
+body.dark nav{
+background:#1e293b;
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:inherit;
+font-weight:500;
+}
+
+.dark-btn{
+background:#1e3c72;
+color:white;
+border:none;
+padding:6px 14px;
+border-radius:20px;
+cursor:pointer;
+}
+
+header{
+padding:140px 20px 80px;
+text-align:center;
+background:linear-gradient(135deg,#1e3c72,#2a5298);
+color:white;
+}
+
+.profile{
+width:170px;
+height:170px;
+border-radius:50%;
+object-fit:cover;
+border:6px solid white;
+}
+
+.tagline{
+font-size:18px;
+margin-top:10px;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:white;
+color:#1e3c72;
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;
+}
+
+section{
+max-width:900px;
+margin:60px auto;
+padding:40px;
+background:white;
+border-radius:15px;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+body.dark section{
+background:#1e293b;
+}
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.counter-box{
+display:flex;
+justify-content:space-around;
+text-align:center;
+}
+
+.blog-card{
+background:#e2e8f0;
+padding:20px;
+margin:20px 0;
+border-radius:10px;
+}
+
+body.dark .blog-card{
+background:#334155;
+}
+</style>
+</head>
+
+<body>
+
+<div id="progress"></div>
+
+<nav>
+<div><strong>Ovi | Educator</strong></div>
+<div>
+<a href="#about">About</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#achievements">Achievements</a>
+<a href="#blog">Blog</a>
+<button class="dark-btn" onclick="toggleDark()">Dark</button>
+</div>
+</nav>
+
+<header>
+<img src="profile.jpg" class="profile">
+<h1>Gazi MD Shahariya Ovi</h1>
+<p class="tagline">Aspiring Teacher | Lifelong Learner | Education Enthusiast</p>
+<a href="cv.pdf" download class="btn">Download CV</a>
+</header>
+
+<section id="about" class="fade">
+<h2>About Me</h2>
+<p>
+I am a thoughtful and curious learner from Chattagram, Bangladesh.
+Currently completing SSC (2026) with GPA 4.25 under Chittagong Board.
+My goal is to become a professional teacher who inspires students and promotes meaningful education.
+</p>
+</section>
+
+<section id="education" class="fade">
+<h2>Education</h2>
+<p><strong>CMP School and College</strong></p>
+<p>SSC 2026 | GPA: 4.25 | Chittagong Board</p>
+</section>
+
+<section id="skills" class="fade">
+<h2>Skills</h2>
+<ul>
+<li>Computer Application for Smart Office Management (CASOM)</li>
+<li>Microsoft Word</li>
+<li>Communication & Presentation</li>
+<li>Critical Thinking</li>
+<li>Curiosity-Driven Learning</li>
+</ul>
+</section>
+
+<section id="achievements" class="fade">
+<h2>Achievements</h2>
+<div class="counter-box">
+<div>
+<h3 class="counter" data-target="4.25">0</h3>
+<p>SSC GPA</p>
+</div>
+
+<div>
+<h3 class="counter" data-target="1">0</h3>
+<p>Certification</p>
+</div>
+
+<div>
+<h3 class="counter" data-target="2026">0</h3>
+<p>Graduation Year</p>
+</div>
+</div>
+</section>
+
+<section id="blog" class="fade">
+<h2>Educational Thoughts</h2>
+
+<div class="blog-card">
+<h3>Why Curiosity Matters</h3>
+<p>True education begins when students ask questions. Curiosity builds deeper understanding.</p>
+</div>
+
+<div class="blog-card">
+<h3>Technology in Education</h3>
+<p>Modern teaching integrates technology to improve access and engagement.</p>
+</div>
+
+</section>
+
+<footer style="text-align:center;padding:40px;background:#1e3c72;color:white;">
+© 2026 Gazi MD Shahariya Ovi | Future Teacher
+</footer>
+
+<script>
+function toggleDark(){
+document.body.classList.toggle("dark");
+}
+
+window.onscroll=function(){
+let winScroll=document.documentElement.scrollTop;
+let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+let scrolled=(winScroll/height)*100;
+document.getElementById("progress").style.width=scrolled+"%";
+};
+
+const faders=document.querySelectorAll(".fade");
+window.addEventListener("scroll",()=>{
+faders.forEach(el=>{
+if(el.getBoundingClientRect().top<window.innerHeight-100){
+el.classList.add("show");
+}
+});
+});
+
+const counters=document.querySelectorAll('.counter');
+counters.forEach(counter=>{
+counter.innerText='0';
+const update=()=>{
+const target=+counter.getAttribute('data-target');
+const c=+counter.innerText;
+const inc=target/200;
+if(c<target){
+counter.innerText=`${Math.ceil(c+inc)}`;
+setTimeout(update,10);
+}else{
+counter.innerText=target;
+}
+};
+update();
+});
+</script>
+
+</body>
+</html>
