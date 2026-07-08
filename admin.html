@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel</title>
+</head>
+<body>
+
+<h2>Update About Section</h2>
+<textarea id="newAbout"></textarea>
+<button onclick="save()">Save</button>
+
+<script>
+function save(){
+localStorage.setItem("about", document.getElementById("newAbout").value);
+alert("Saved!");
+}
+</script>
+
+</body>
+</html>
