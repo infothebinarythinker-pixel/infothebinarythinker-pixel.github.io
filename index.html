@@ -8,6 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
+
+/* ===== GLOBAL ===== */
 body{
 margin:0;
 font-family:'Poppins',sans-serif;
@@ -18,60 +20,104 @@ scroll-behavior:smooth;
 
 h1,h2,h3{
 font-family:'Playfair Display',serif;
+margin-top:0;
 }
 
+section{
+padding:80px 10%;
+}
+
+@media (max-width:768px){
+section{
+padding:60px 6%;
+}
+}
+
+/* ===== NAVIGATION ===== */
 nav{
 position:fixed;
 top:0;
 width:100%;
+background:white;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 50px;
-background:white;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
+padding:15px 8%;
+box-shadow:0 4px 15px rgba(0,0,0,0.05);
 z-index:1000;
 }
 
+nav .logo{
+font-weight:700;
+color:#1e3a8a;
+}
+
+nav .links{
+display:flex;
+gap:25px;
+}
+
 nav a{
-margin-left:20px;
 text-decoration:none;
 color:#1e3a8a;
 font-weight:600;
 }
 
-header{
-padding:160px 20px 100px;
-text-align:center;
-background:linear-gradient(135deg,#0f172a,#1e3a8a);
-color:white;
+/* Mobile Nav */
+@media (max-width:768px){
+nav{
+flex-direction:column;
+gap:10px;
+padding:15px;
 }
 
-.profile-wrapper{
-display:flex;
+nav .links{
+flex-wrap:wrap;
 justify-content:center;
-margin-bottom:30px;
+}
+}
+
+/* ===== HERO ===== */
+header{
+padding-top:160px;
+padding-bottom:100px;
+background:linear-gradient(135deg,#0f172a,#1e3a8a);
+color:white;
+text-align:center;
 }
 
 .profile{
-width:190px;
-height:190px;
+width:200px;
+height:200px;
 border-radius:50%;
 object-fit:cover;
 border:6px solid #f59e0b;
 box-shadow:0 10px 40px rgba(0,0,0,0.4);
 }
 
+@media (max-width:768px){
+.profile{
+width:140px;
+height:140px;
+}
+}
+
 .tagline{
-font-size:20px;
 color:#f59e0b;
+font-size:20px;
 margin-top:10px;
+}
+
+.hero-text{
+max-width:700px;
+margin:20px auto;
+font-size:18px;
 }
 
 .btn{
 display:inline-block;
 margin-top:25px;
-padding:12px 28px;
+padding:12px 30px;
 background:#f59e0b;
 color:white;
 border-radius:30px;
@@ -79,64 +125,77 @@ text-decoration:none;
 font-weight:600;
 }
 
-section{
-max-width:950px;
-margin:80px auto;
-padding:50px;
-background:white;
-border-radius:20px;
-box-shadow:0 10px 35px rgba(0,0,0,0.06);
+/* ===== SECTIONS ===== */
+.container{
+max-width:1100px;
+margin:auto;
 }
 
-section h2{
+.section-box{
+background:white;
+padding:50px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.06);
+margin-bottom:60px;
+}
+
+@media (max-width:768px){
+.section-box{
+padding:30px;
+}
+}
+
+.section-box h2{
 color:#1e3a8a;
-margin-bottom:20px;
 border-bottom:3px solid #f59e0b;
 display:inline-block;
 padding-bottom:5px;
 }
 
-.highlight{
-color:#1e3a8a;
-font-weight:600;
-}
-
-.quote{
-background:#f1f5f9;
-padding:25px;
-border-left:5px solid #f59e0b;
-margin-top:20px;
-font-style:italic;
-}
-
+/* ===== COUNTER ===== */
 .counter-box{
 display:flex;
 justify-content:space-around;
-margin-top:30px;
+margin-top:40px;
 text-align:center;
+flex-wrap:wrap;
+gap:30px;
 }
 
 .counter{
-font-size:28px;
-color:#1e3a8a;
+font-size:32px;
 font-weight:700;
+color:#1e3a8a;
 }
 
+/* ===== FOOTER ===== */
 footer{
 text-align:center;
 padding:40px;
 background:#0f172a;
 color:white;
-margin-top:60px;
 }
+
+/* ===== FADE EFFECT ===== */
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
 </style>
 </head>
 
 <body>
 
 <nav>
-<div><strong>Ovi | Educator</strong></div>
-<div>
+<div class="logo">Ovi | Educator</div>
+<div class="links">
 <a href="#about">About</a>
 <a href="#philosophy">Philosophy</a>
 <a href="#education">Education</a>
@@ -145,66 +204,41 @@ margin-top:60px;
 </nav>
 
 <header>
-
-<div class="profile-wrapper">
 <img src="profile.jpg" class="profile">
-</div>
-
 <h1>Gazi MD Shahariya Ovi</h1>
-<p class="tagline">Aspiring Teacher | Lifelong Learner | Academic Visionary</p>
+<p class="tagline">Aspiring Teacher | Lifelong Learner</p>
 
-<p style="max-width:700px;margin:20px auto;font-size:18px;">
+<p class="hero-text">
 Dedicated to inspiring curiosity, critical thinking, and meaningful education.
-Committed to building a future where learning empowers individuals.
+My mission is to empower students through knowledge and confidence.
 </p>
 
 <a href="cv.pdf" download class="btn">Download CV</a>
-
 </header>
 
-<section id="about">
+<section class="container">
+
+<div class="section-box fade" id="about">
 <h2>About Me</h2>
-
 <p>
-I am a motivated and thoughtful student from <span class="highlight">Chattagram, Bangladesh</span>.
-Currently completing SSC (2026) with a GPA of <span class="highlight">4.25</span> under the Chittagong Board.
-My academic journey is driven by curiosity, discipline, and a strong desire to contribute to education.
+I am a motivated student from Chattagram, Bangladesh, completing SSC (2026)
+with GPA 4.25 under Chittagong Board.
+My passion lies in education and intellectual growth.
 </p>
-
-<p style="margin-top:20px;">
-I believe that education is the foundation of societal progress.
-Through patience, empathy, and innovation, I aim to create a classroom
-environment where students feel confident and inspired.
-</p>
-
-</section>
-
-<section id="philosophy">
-<h2>Teaching Philosophy</h2>
-
-<p>
-Education is not about memorization — it is about understanding.
-True teaching empowers students to question, explore, and grow.
-</p>
-
-<ul style="margin-top:20px;">
-<li><strong>Curiosity First:</strong> Encourage deep questioning and exploration.</li>
-<li><strong>Respect & Empathy:</strong> Build trust and mutual understanding.</li>
-<li><strong>Modern Integration:</strong> Use technology to enhance learning.</li>
-<li><strong>Student Confidence:</strong> Help students believe in themselves.</li>
-</ul>
-
-<div class="quote">
-"It is best never to seek out death and love, for they will find their way to you on their own."
 </div>
 
-</section>
+<div class="section-box fade" id="philosophy">
+<h2>Teaching Philosophy</h2>
+<p>
+Education should build understanding, not just memory.
+Students must feel safe, respected, and encouraged to ask questions.
+</p>
+</div>
 
-<section id="education">
+<div class="section-box fade" id="education">
 <h2>Academic Achievements</h2>
 
 <div class="counter-box">
-
 <div>
 <div class="counter" data-target="4.25">0</div>
 <p>SSC GPA</p>
@@ -212,40 +246,47 @@ True teaching empowers students to question, explore, and grow.
 
 <div>
 <div class="counter" data-target="1">0</div>
-<p>Certification (CASOM)</p>
+<p>Certification</p>
 </div>
 
 <div>
 <div class="counter" data-target="2026">0</div>
 <p>Graduation Year</p>
 </div>
+</div>
 
 </div>
 
-</section>
-
-<section id="vision">
+<div class="section-box fade" id="vision">
 <h2>Future Vision</h2>
-
 <p>
-My long-term goal is to become a respected teacher who shapes young minds,
-encourages independent thinking, and promotes lifelong learning.
+To become a respected teacher who shapes young minds,
+integrates technology in education,
+and promotes lifelong learning.
 </p>
-
-<p style="margin-top:20px;">
-I envision classrooms where technology, creativity, and academic excellence
-work together to build the leaders of tomorrow.
-</p>
+</div>
 
 </section>
 
 <footer>
 © 2026 Gazi MD Shahariya Ovi  
 <br>
-Future Educator | Dedicated to Knowledge & Growth
+Professional Educator Portfolio
 </footer>
 
 <script>
+
+/* Fade Animation */
+const faders=document.querySelectorAll(".fade");
+window.addEventListener("scroll",()=>{
+faders.forEach(el=>{
+if(el.getBoundingClientRect().top<window.innerHeight-100){
+el.classList.add("show");
+}
+});
+});
+
+/* Counter Animation */
 const counters=document.querySelectorAll('.counter');
 counters.forEach(counter=>{
 counter.innerText='0';
@@ -262,6 +303,7 @@ counter.innerText=target;
 };
 update();
 });
+
 </script>
 
 </body>
