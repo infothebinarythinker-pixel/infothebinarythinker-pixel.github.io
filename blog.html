@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <title>Blog | Gazi MD Shahariya Ovi</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .blog-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .blog-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .blog-header h1 {
+            color: #2563eb;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .blog-grid {
+            display: grid;
+            gap: 30px;
+        }
+        
+        .blog-post {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: left;
+            transition: transform 0.2s;
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-post h2 {
+            color: #2563eb;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+        
+        .blog-meta {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        
+        .blog-excerpt {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .read-more {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: background 0.2s;
+        }
+        
+        .read-more:hover {
+            background: #1e40af;
+        }
+        
+        .no-posts {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+            font-size: 1.2em;
+        }
+        
+        .back-home {
+            display: inline-block;
+            margin-top: 30px;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .back-home:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-container">
+        <div class="blog-header">
+            <h1>My Writings</h1>
+            <p>Thoughts, ideas, and reflections on education and learning</p>
+        </div>
+        
+        <div id="blog-grid" class="blog-grid"></div>
+        
+        <div style="text-align: center;">
+            <a href="index.html" class="back-home">← Back to Home</a>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const posts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
+            const blogGrid = document.getElementById('blog-grid');
+            
+            if (posts.length === 0) {
+                blogGrid.innerHTML = '<div class="no-posts">No posts yet. Check back soon!</div>';
+                return;
+            }
+            
+            blogGrid.innerHTML = posts.map(post => `
+                <div class="blog-post">
+                    <h2>${escapeHtml(post.title)}</h2>
+                    <div class="blog-meta">${formatDate(post.date)}</div>
+                    <p class="blog-excerpt">${escapeHtml(post.excerpt)}</p>
+                    <a href="post.html?id=${post.id}" class="read-more">Read More</a>
+                </div>
+            `).join('');
+        });
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString('en-US', options);
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a185bb5e1b845aca',t:'MTc4MzU4MzM2NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
