@@ -1,10 +1,19 @@
-// Performance: Defer non-critical JavaScript
+// QUICK FIX - Replace your current script.js with this
+// FIXED: Loading screen now hides immediately
+
+// Hide loading screen as soon as possible
+window.addEventListener('load', function() {
+    const loading = document.getElementById('loading');
+    if (loading) {
+        loading.classList.add('hidden');
+        // Remove from DOM after animation
+        setTimeout(() => {
+            loading.style.display = 'none';
+        }, 300);
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // Hide loading screen
-    setTimeout(() => {
-        document.getElementById('loading').classList.add('hidden');
-    }, 500);
     
     // Animated counters
     const counters = document.querySelectorAll('.stat-number');
@@ -88,24 +97,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    // Lazy load images
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-        
-        document.querySelectorAll('img[data-src]').forEach(img => {
-            imageObserver.observe(img);
-        });
-    }
 });
 
 // Blog Posts Management
@@ -113,7 +104,7 @@ function loadBlogPosts() {
     const blogContainer = document.getElementById('blog-posts');
     if (!blogContainer) return;
     
-    // Load posts from localStorage (in production, this would be from a JSON file or API)
+    // Load posts from localStorage
     const posts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
     
     if (posts.length === 0) {
@@ -144,13 +135,4 @@ function escapeHtml(text) {
 function formatDate(dateString) {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateString).toLocaleDateString('en-US', options);
-}
-
-// Service Worker for offline support (optional)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').catch(err => {
-            console.log('ServiceWorker registration failed:', err);
-        });
-    });
 }
